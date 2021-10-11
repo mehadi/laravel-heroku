@@ -1,2 +1,2 @@
 #!/bin/bash
-composer install -d /var/www/html
+composer install --ignore-platform-reqs -d /var/www/html
