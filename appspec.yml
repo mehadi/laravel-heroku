@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html/
+hooks:
+  BeforeInstall:
+    - location: devops/install_dependencies.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: devops/start_server.sh
+      timeout: 300
+      runas: root
+  # ApplicationStop:
+  #   - location: devops/stop_server.sh
+  #     timeout: 300
+  #     runas: root
